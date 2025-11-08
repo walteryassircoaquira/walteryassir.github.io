@@ -48,8 +48,12 @@
     .btn { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 12px; padding: 14px 16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; text-decoration: none; color: var(--text); transition: transform .08s ease, border-color .2s ease, box-shadow .2s ease; }
     .btn:hover { transform: translateY(-1px); border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring), var(--shadow); }
     .btn small { color: var(--muted); }
+
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .gallery img,
+    .gallery iframe { width: 100%; height: 160px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .gallery img { object-fit: cover; }
+
     footer { margin: 26px 0 10px; color: var(--muted); font-size: 0.95rem; text-align: center; }
     @media (max-width: 780px) { header { grid-template-columns: 1fr; text-align: center; } .grid { grid-template-columns: 1fr; } .badges { justify-content: center; } }
   </style>
@@ -87,17 +91,13 @@
         <nav class="links">
           <a class="btn" href="https://wa.me/59168006004?text=Másinformación" target="_blank" rel="noopener">
             <span aria-hidden="true">📱</span>
-            <span>WhatsApp<br /><small>Escríbeme y agenda una llamada</small></span>
+            <span>WhatsApp<br /><small>Escríbeme para agendar tu clase demo </small></span>
             <span>↗</span>
           </a>
-          <a class="btn" href="https://www.facebook.com/walter.yassir.coaquira.cruz/" target="_blank" rel="noopener">
-            <span aria-hidden="true">📘</span>
-            <span>Facebook<br /><small>Publicaciones, fotos y reseñas</small></span>
-            <span>↗</span>
-          </a>
+          <!-- 🔻 Facebook eliminado -->
           <a class="btn" href="https://www.tiktok.com/@waltercoaquiraingles" target="_blank" rel="noopener">
             <span aria-hidden="true">🎵</span>
-            <span>TikTok<br /><small>Videos cortos de aprendizaje</small></span>
+            <span>TikTok<br /><small>Videos para aprender inglés </small></span>
             <span>↗</span>
           </a>
           <a class="btn" href="https://drive.google.com/file/d/1k5jkLrFlL6hjUXVVXz43U6wcT62AJtUA/view?usp=sharing" target="_blank" rel="noopener">
@@ -112,7 +112,15 @@
     <section class="card" aria-labelledby="galeria">
       <h2 id="galeria">Galería</h2>
       <div class="gallery">
-        <img src="https://drive.google.com/thumbnail?id=1VWZgFnr7TOvwMUtdTuAOsGcV0PFcWqIp&sz=w1200" alt="Foto de clase 1" />
+        <!-- 🟢 Reemplazo de la primera imagen por un video de Google Drive -->
+        <iframe
+          src="https://drive.google.com/file/d/138QqbNSBnOmNxbtOD3TxSImPk49YBV3T/preview"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="Video de presentación">
+        </iframe>
+
+        <!-- Mantengo las otras dos imágenes igual -->
         <img src="https://drive.google.com/thumbnail?id=1z0hdOEjNcDCy-RxQfOJVLLwpbauuOTXB&sz=w1200" alt="Foto de clase 2" />
         <img src="https://drive.google.com/thumbnail?id=1Bmvy4D41Rl9Sya_vEUxuKPuyTflTOQPN&sz=w1200" alt="Foto de clase 3" />
       </div>
@@ -136,9 +144,9 @@
     "address": {"@type": "PostalAddress", "addressLocality": "La Paz / El Alto", "addressCountry": "BO"},
     "sameAs": [
       "https://wa.me/59168006004?text=Másinformación",
-      "https://www.facebook.com/walter.yassir.coaquira.cruz/",
       "https://www.tiktok.com/@waltercoaquiraingles",
       "https://drive.google.com/file/d/1k5jkLrFlL6hjUXVVXz43U6wcT62AJtUA/view?usp=sharing"
+      /* Facebook eliminado */
     ]
   }
   </script>
